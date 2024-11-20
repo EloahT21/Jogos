@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMG Twice</title>
+
+
+</head>
+
+<body>
+    <center>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,500&display=swap');
+
+            * {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                border: none;
+                font-family: "Chakra Petch", sans-serif;
+            }
+
+
+            body {
+
+
+                background-image: linear-gradient(0deg, rgb(255, 84, 141), rgba(250, 168, 172, 0.932), rgb(255, 132, 136));
+                background-repeat: no-repeat;
+                display: flex;
+                height: 100vh;
+                justify-content: center;
+            }
+
+            h1 {
+                height: 100px;
+                margin-top: 30vh;
+                font-size: 105px;
+                color: white;
+                border: solid 2px;
+                padding: 10px 10px 40px 10px;
+
+            }
+
+            .chakra-petch-medium-italic {
+                font-family: "Chakra Petch", sans-serif;
+                font-weight: 500;
+                font-style: italic;
+            }
+
+            .login_input {
+                color: rgba(0, 0, 0, 0.829);
+                border-radius: 5px;
+                margin-top: 50px;
+                margin-right: 10px;
+                padding: 10px;
+                font-size: 1em;
+                box-shadow: 5px 5px;
+            }
+
+            .login_button {
+                color: rgb(0, 0, 0);
+                background-color: white;
+                box-shadow: 5px 5px;
+                border-radius: 5px;
+                cursor: pointer;
+                display: inline-block;
+                padding: 10px;
+                text-align: center;
+                max-width: 300px;
+                width: 100px;
+                height: 35px;
+            }
+
+            a:link {
+                text-decoration: none;
+                margin: 4px 3px;
+            }
+
+            .login_button:hover {
+
+                font-size: 10px;
+                transition-duration: 0.4s;
+            }
+
+            #mensagem{
+                font-size: 2.7vh;
+                color: #e9e4e4;
+                margin: 5vh;
+                text-align: center;
+                transition: opacity 0.5s, ease-in-out;
+                animation: fadeInText 2s forwards;
+            }
+        </style>
+
+
+        <h1>OMG Twice</h1>
+        <p id="mensagem"></p>
+        <form class="login_form" onsubmit="startGame(event)">
+            <input type="text" id="playerName" placeholder="Nome" class="login_input">
+            <button type="submit" class="login_button">Jogar</button>
+        </form>
+
+
+        <script>
+const mensagem = document.getElementById("mensagem");
+
+const mensagens = [
+    "Não pense duas vezes antes de jogar!",
+    "Quanto mais pontos melhor!",
+    "Twice!"
+];
+
+let ultimaMensagem;
+
+function mostrarMensagemAleatoria() {
+    let novaMensagem;
+    mensagem.style.opacity = 0; // Corrigido aqui
+
+    do {
+        novaMensagem = mensagens[Math.floor(Math.random() * mensagens.length)];
+    } while (novaMensagem === ultimaMensagem);
+
+    setTimeout(() => {
+        mensagem.textContent = novaMensagem;
+        mensagem.style.opacity = 1;
+        ultimaMensagem = novaMensagem;
+    }, 500);
+}
+
+setInterval(mostrarMensagemAleatoria, 2000);
+
+function startGame(event) {
+    event.preventDefault(); // Previne o envio do formulário
+    const playerName = document.getElementById('playerName').value;
+    if (playerName.trim() !== '') {
+        localStorage.setItem('playerName', playerName); // Salva o nome do jogador
+        window.location.href = 'game1.html'; // Redireciona para a página do jogo
+    } else {
+        alert('Por favor, digite seu nome!');
+    }
+}
+
+        </script>
+
+</body>
+
+</html>
