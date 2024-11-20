@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/game.css">
+    
+    <script defer src="../js/game.js"></script>
+
+
+    <title>Twice Memory</title>
+    <!--o cmando abaixo serve pra colocar o logo do site-->
+    <link rel="website icon" href="../img/twice logo1.png">
+
+</head>
+<body>
+    <!--comando pra colocar audio de background (adivado com o js, assimm que vira a primeira carta)-->
+        <audio loop id="audio" src="../img/TWICE(트와이스) - KNOCK KNOCK (Instrumental) [TWICEcoaster _ LANE 2].mp3" autoplay>
+        </audio>
+<main>
+    <!--header onde fica o tempo, e o nome do jogador-->
+    <header>
+        <span class="player"></span>
+        <span>Tempo: <span class="timer">00</span></span>
+    </header>
+    <!--aqui fica apenas uma div que cra todas as cartas de forma automatica com um comando do java scrip-->
+    <div class="grid"></div>
+
+    <div> <!--div especificamente ara os botoes ue ficam abaixo dos carrds.-->
+        <div>
+            <button class="button"><a href="games.html" style="text-decoration: none;"><p style="color: white;">Reiniciar</p></a></button>   
+        </div>
+        <div>
+            <button class="button"><a href="../index.html" style="text-decoration: none;"><p style="color: white;">Inicio</p></a></button>
+        </div>
+    </div>   
+</main>
+
+    <div class="game-modal"> <!--aqui fica a tela de pop up no fimde jogo, como se fosse um ".alert". porém personalizado-->
+        <div class="contenti">
+            <video autoplay loop muted src="../img/tzuy embrasando.mp4"></video>
+            <br><h1>Parabéns!</h1>
+            <p>Você ganhou o jogo!</p>
+            <div>
+                <button class="buttonn"><p style="color: white; cursor: pointer;">Jogar Novamente</button></p>
+            </div>
+        </div>
+    </div>
+</body>
+</center>
+</html>
